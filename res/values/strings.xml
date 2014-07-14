@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Circedroid</string>
+    <string name="action_settings">Settings</string>
+    <string name="loading">Chargement...</string>
+    <string name="loading_problem">Oups, chargement impossible.</string>
+    
+    <string name="start">Départ : </string>
+    <string name="end">Arrivée : </string>
+    <string name="search_crs">Rechercher un CRS</string>
+    <string name="search_hint">Ex. : IGNF:LAMB93, RGF93...</string>
+    <string name="search_noresult">Pas de résultats.</string>
+    <string name="select">Sélectionner</string>
+    <string name="cancel">Annuler</string>
+    <string name="info_of">Détails de&#160;</string>
+    <string name="crs_not_found">CRS introuvable.</string>
+    <string name="not_found">introuvable.</string>
+    
+    
+    <string name="type">Type :&#160;</string>
+    <string name="geocentric">Géocentrique</string>
+    <string name="geographic">Géographique</string>
+    <string name="projected">Projeté</string>
+    <string name="coumpound">Composé</string>
+    <string name="vertical">Vertical</string>
+    
+    <string name="datum">Datum :&#160;</string>
+    <string name="vertical_datum">Datum Vert.:&#160;</string>
+    <string name="ellipsoid">Ellip. :&#160;</string>
+    <string name="meridian">Méridien :&#160;</string>
+    <string name="projection">Proj. :&#160;</string>
+    <string name="uom">Unité. :&#160;</string>
+    
+    <string name="sexa">Degrès, minutes, secondes</string>
+    <string name="deg">Degrès décimaux</string>
+    <string name="grad">Grades</string>
+    <string name="meter">Mètres</string>
+    
+
+
+</resources>
+

@@ -1,0 +1,46 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_search_crs"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_weight="10" >
+
+    <TextView
+        android:id="@+id/search_crs_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:text="Large Text"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/search_crs_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_margin="8dp"
+        android:src="@android:drawable/ic_menu_info_details" />
+
+    <TextView
+        android:id="@+id/search_crs_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/search_crs_id"
+        android:layout_alignTop="@id/search_crs_id"
+        android:layout_marginLeft="8sp"
+        android:layout_toLeftOf="@id/search_crs_info"
+        android:layout_toRightOf="@id/search_crs_id"
+        android:text="Medium Text un peu trop long"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@android:color/darker_gray"
+        android:textStyle="italic" />
+
+    <View
+        android:id="@+id/search_crs_line"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_alignParentLeft="@id/search_crs_id"
+        android:layout_below="@id/search_crs_id"
+        android:background="@android:color/background_dark" />
+
+</RelativeLayout>

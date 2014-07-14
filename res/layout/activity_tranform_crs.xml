@@ -1,0 +1,53 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/transform_crs_template"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:gravity="bottom"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/transform_crs_prefix"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Prefix"
+        android:textAppearance="?android:attr/listSeparatorTextViewStyle" />
+
+    <TextView
+        android:id="@+id/transform_crs_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Large Text"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textStyle="bold"
+        android:layout_below="@id/transform_crs_prefix"/>
+
+   
+
+    <ImageView
+        android:id="@+id/transform_crs_select"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@android:drawable/ic_menu_edit"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/transform_crs_prefix" />
+    
+     <TextView
+        android:id="@+id/transform_crs_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8sp"
+        android:text="Medium Text un peu trop long mais d'une longueur"
+        android:layout_alignParentLeft="true"
+        android:layout_toLeftOf="@id/transform_crs_select"
+        android:textColor="@android:color/darker_gray"
+        android:textStyle="italic"
+        android:layout_below="@id/transform_crs_id" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@android:color/background_dark"
+        android:layout_below="@id/transform_crs_name" />"
+
+</RelativeLayout>
