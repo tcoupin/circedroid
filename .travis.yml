@@ -1,3 +1,11 @@
 language: android
-
 script: mvn install
+deploy:
+  provider: releases
+  api_key:
+    secure: cdvHinZISEyzVqN4uV3X4D2EyAsMB3e/4r/7Maj9yixcnbLTV3T+h/xNbi42EkXyPy/gqqMEpVVJw/OXxp+fIkknaDdngjouH1mC/ZgpwEXkP8GnVfVoCqm9/oIzS1NOn6gCXH4SK48fJ4ljX23G9kbF7/OX/fDU8PtABvTqsGw=
+  skip_cleanup: true
+  file: ./target/circedroid.apk
+  on:
+    branch: travis
+
