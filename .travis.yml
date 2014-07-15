@@ -1,6 +1,6 @@
 language: android
 script: mvn package
+after_success: /bin/bash ./.travisDeploy.sh
 env:
   global:
-    secure: Cf7Lhy9X1p1T1PyyTeUS79/TU2Mtet2okyXnv4syz7shQ5m95uMTwciD1AlvvUMpIyGHUPeuS8RQtKPIEQjNUPTl0VpxseO7PdyxhpYzD/u4RedO4vC/4ikdnScuALwVlSZwaPX+PsciLYHOyxe6LzdTC71p+zh/czeaoV6/rRE=
-after_success: /bin/bash ./.travisDeploy.sh
+    secure: K4FMyM35bqf7ypfiW09mse+BHABkLgMISnrJe+ba/PT6YFNLWT+ZZ2Lf9BWDBKotaJqcP4P8rTCHhtIPrWh5GZ0jdMtHu1jH+mEmoBG4/MN/Gc56NucOh6L/yv4b2TcDIQaxYPXZGmYgd/papRKisCvd7out6TxqoDl0issWBNk=
