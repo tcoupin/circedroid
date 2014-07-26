@@ -1,5 +1,5 @@
 language: android
-script: mvn package
+script: mvn clean package
 after_success: /bin/bash ./.travisDeploy.sh
 env:
   global:
