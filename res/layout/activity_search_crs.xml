@@ -4,11 +4,20 @@
     android:layout_height="wrap_content"
     android:layout_weight="10" >
 
+    <ImageView
+        android:id="@+id/search_crs_fav"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:src="@android:drawable/btn_star_big_on"
+        android:visibility="gone" />
+
     <TextView
         android:id="@+id/search_crs_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
+        android:layout_toRightOf="@id/search_crs_fav"
         android:text="Large Text"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textStyle="bold" />
@@ -25,8 +34,8 @@
         android:id="@+id/search_crs_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-		android:layout_below="@id/search_crs_id"
         android:layout_alignLeft="@id/search_crs_id"
+        android:layout_below="@id/search_crs_id"
         android:text="Medium Text un peu trop long"
         android:textColor="@android:color/darker_gray"
         android:textStyle="italic" />
