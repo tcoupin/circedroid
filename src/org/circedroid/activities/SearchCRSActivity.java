@@ -59,7 +59,7 @@ public class SearchCRSActivity extends Activity {
 
 	public OnClickListener onClickListSelect;
 	public OnClickListener onClickListInfo;
-	public OnClickListener onClickListFavRemove;
+	public OnClickListener onClickListFavToogle;
 
 	private static String selectedId;
 
@@ -106,17 +106,31 @@ public class SearchCRSActivity extends Activity {
 
 		resultsView = (LinearLayout) findViewById(R.id.searchResultLayout);
 
-		this.onClickListFavRemove = new OnClickListener() {
+		this.onClickListFavToogle = new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
 				TextView tv = (TextView) ((View) v.getParent())
 						.findViewById(R.id.search_crs_id);
 				String id = tv.getText().toString();
-				favCRSids = favCRSids.replace(id, "").replace(",,", ",");
+				
+				Boolean isFav = false;
+				for (String fav : favCRSids.split(",")){
+					if (fav.equals(id)){
+						isFav = true;
+						break;
+					}
+				}
+				if (isFav){
+					favCRSids = favCRSids.replace(id, "").replace(",,", ",");
+					ImageView iv = (ImageView) v;
+					iv.setImageResource(android.R.drawable.btn_star_big_off);
+				} else {
+					favCRSids =favCRSids + "," + id;
+					ImageView iv = (ImageView) v;
+					iv.setImageResource(android.R.drawable.btn_star_big_on);
+				}
 				saveFav();
-				ImageView iv = (ImageView) v;
-				iv.setImageResource(android.R.drawable.btn_star_big_off);
 			}
 		};
 
@@ -333,7 +347,17 @@ public class SearchCRSActivity extends Activity {
 			return;
 		}
 		for (SearchResult<CRS> result : results) {
-			addCRSView(result.getItem());
+			//First
+			Boolean isFav = false;
+			if (favCRSids.contains(result.getItem().getId())){
+				for (String favids : favCRSids.split(",")){
+					if (favids.equals(result.getItem().getId())){
+						isFav = true;
+						break;
+					}
+				}
+			}
+			addCRSView(result.getItem(), isFav);
 		}
 
 	}
@@ -363,9 +387,6 @@ public class SearchCRSActivity extends Activity {
 
 	}
 
-	public void addCRSView(CRS crs) {
-		addCRSView(crs, false);
-	}
 
 	public void addCRSView(CRS crs, Boolean isFav) {
 		LayoutInflater.from(this).inflate(R.layout.activity_search_crs,
@@ -381,11 +402,10 @@ public class SearchCRSActivity extends Activity {
 		tvCRSId.setOnClickListener(this.onClickListSelect);
 		tvCRSName.setOnClickListener(this.onClickListSelect);
 		ivCRSInfo.setOnClickListener(this.onClickListInfo);
-
+		ImageView ivStar = (ImageView) ll.findViewById(R.id.search_crs_fav);
+		ivStar.setOnClickListener(onClickListFavToogle);
 		if (isFav) {
-			ImageView ivStar = (ImageView) ll.findViewById(R.id.search_crs_fav);
-			ivStar.setVisibility(ImageView.VISIBLE);
-			ivStar.setOnClickListener(onClickListFavRemove);
+			ivStar.setImageResource(android.R.drawable.btn_star_big_on);
 		}
 	}
 
